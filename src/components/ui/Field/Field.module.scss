@@ -1,0 +1,62 @@
+@import '../../../index.scss';
+
+.field {
+  width: 100%;
+  max-width: 380px;
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    input {
+      width: 100%;
+      padding: 16px 10px;
+      border: 1px solid var(--primary-grey);
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #202124;
+      background-color: hsl(200, 12%, 95%);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hint {
+      @include label-txt(var(--primary-grey));
+    }
+    .error {
+      @include label-txt(var(--primary-red));
+    }
+  }
+}
+
+.error {
+  label {
+    input {
+      border: 1px solid var(--primary-red);
+    }
+  }
+}
+
+.field:focus {
+  label {
+    input {
+      border-color: var(--primary-black);
+      outline: none;
+      box-shadow: 0 0 0 2px var(--primary-black);
+    }
+  }
+}
+
+.field:focus {
+  label {
+    input {
+      color: #80868b;
+    }
+  }
+}
+
+.field:focus::placeholder {
+  label {
+    input {
+      color: transparent;
+    }
+  }
+}

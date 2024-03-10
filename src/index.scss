@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-white: #ffffff;
+  --primary-yellow: #f4e041;
+  --primary-black: #000000de;
+  --primary-grey: #7e7e7e;
+  --primary-disabled: #B4B4B4;
+  --primary-red: #ff3633;
+  --white-smoke: #faf9f6;
+}
+
+@mixin primary-text($color, $font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin label-txt($color) {
+  color: $color;
+  font-size: 12px;
+  line-height: 14px;
+  padding-left: 20px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0px auto;
+}
+
+.p-primary-black {
+  @include primary-text(var(--primary-black), 16px, 26px, 400);
+}
+
+.p-primary-white {
+  @include primary-text(var(--primary-white), 16px, 26px, 400);
+}
+
+.h-primary-black {
+  @include primary-text(var(--primary-black), 40px, 40px, 400);
+}
+
+.h-primary-white {
+  @include primary-text(var(--primary-white), 40px, 40px, 400);
+}
+
+.btn-primary {
+  background: var(--primary-yellow);
+  color: var(--primary-black);
+  padding: 9px 0px;
+  width: 100%;
+  max-width: 110px;
+  border-radius: 16px;
+}
+
+.btn-primary-disabled {
+  background: var(--primary-disabled);
+  color: var(--primary-white);
+  cursor: default;
+  padding: 9px 0px;
+  width: 100%;
+  max-width: 110px;
+  border-radius: 16px;
+}

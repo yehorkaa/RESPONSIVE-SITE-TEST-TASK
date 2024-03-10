@@ -1,0 +1,28 @@
+section {
+  width: 100%;
+  background-color: var(--primary-white);
+  .intro_bg {
+    background-image: url("../../../assets/intro-background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 200px 0;
+    .intro_content {
+      margin: 0 auto;
+      text-align: center;
+      max-width: 380px;
+      gap: 20px;
+      button {
+        max-width: 107px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 650px) {
+  section {
+    .intro_bg {
+      padding: 90px 20px; 
+    }
+  }
+}

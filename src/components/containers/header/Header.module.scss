@@ -1,0 +1,23 @@
+header {
+  background: var(--primary-white);
+  width: 100%;
+  height: auto;
+  padding: 17px 34px;
+  .header_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .buttons_group {
+        width: 100%;
+        max-width: 220px;
+        gap: 5px;
+    }
+  }
+}
+
+
+@media all and (max-width: 650px) {
+  header {
+    padding: 10px 10px;
+  }
+}
