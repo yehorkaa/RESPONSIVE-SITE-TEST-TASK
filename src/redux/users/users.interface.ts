@@ -17,4 +17,7 @@ export interface IGetUsersRes {
 export interface IUserState {
     users: IGetUsersRes,
     isLoading: boolean,
+    error: boolean,
+    message: string,
+    added_successfully: boolean,
 }

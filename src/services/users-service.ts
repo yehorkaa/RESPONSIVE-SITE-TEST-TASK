@@ -20,7 +20,6 @@ export const UserService = {
     formData.append("photo", body.file);
     try {
       const token = AuthService.getToken();
-      console.log(token);
       if (token) {
         const response = await fetch(BASE_URL, {
           method: "POST",
@@ -28,9 +27,11 @@ export const UserService = {
           headers: { Token: token },
         });
         return response.json();
+      } else {
+        return { success: false, message: 'You are not authorized' }
       }
     } catch {
-      return {};
+      return { success: false, message: 'Failed to register' };
     }
   },
 };

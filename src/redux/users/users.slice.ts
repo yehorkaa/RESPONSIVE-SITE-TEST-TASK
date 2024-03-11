@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addUser, getUsers } from "./users.actions";
 import { IUserState } from "./users.interface";
-import { IUser } from "../../types/user.types";
+import { ICreatedUserRes, IUser } from "../../types/user.types";
 
 const initialState: IUserState = {
   users: {
@@ -17,6 +17,9 @@ const initialState: IUserState = {
     users: [],
   },
   isLoading: false,
+  error: false,
+  added_successfully: false,
+  message: ''
 };
 
 export const usersSlice = createSlice({
@@ -41,11 +44,11 @@ export const usersSlice = createSlice({
       .addCase(addUser.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(addUser.fulfilled, (state) => {
-        state.isLoading = false;
+      .addCase(addUser.fulfilled, (state, { payload }) => {
+        return { ...state, isLoading: false, error: false, added_successfully: true, message: payload.message }
       })
-      .addCase(addUser.rejected, (state) => {
-        state.isLoading = false;
+      .addCase(addUser.rejected, (state, { payload }) => {
+        return { ...state, isLoading: false, error: true, message: (payload as ICreatedUserRes).message }
       });
   },
 });

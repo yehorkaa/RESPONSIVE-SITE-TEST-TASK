@@ -7,6 +7,9 @@ const useUsers = () => {
   const {
     users: { users },
     isLoading,
+    error,
+    message,
+    added_successfully,
   } = useTypedSelector((state) => state.user);
   const { getUsers } = useActions();
   const [visibleCount, setVisibleCount] = useState(6);
@@ -19,7 +22,7 @@ const useUsers = () => {
     getUsers();
   }, []);
 
-  return { users, handleShowMore, visibleCount, isLoading };
+  return { users, handleShowMore, visibleCount, isLoading, error, message, added_successfully };
 };
 
 export default useUsers;

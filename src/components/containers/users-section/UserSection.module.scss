@@ -2,11 +2,13 @@
   width: 100%;
   background: var(--white-smoke);
   padding: 100px 20px;
+
   .user_section_content {
     .users_list {
       gap: 40px;
       width: 100%;
       margin-bottom: 100px;
+
       .grid_container {
         display: grid;
         margin: 0 auto;
@@ -16,6 +18,7 @@
         align-items: center;
         grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
         gap: 20px;
+
         .user_card {
           border-radius: 12px;
           background: var(--primary-white);
@@ -24,6 +27,7 @@
           height: 100%;
           text-align: center;
           color: var(--primary-black);
+
           .avatar_container {
             img {
               object-fit: cover;
@@ -31,6 +35,7 @@
               border-radius: 50%;
             }
           }
+
           .name {
             margin-bottom: 25px;
           }
@@ -40,24 +45,64 @@
 
     .user_auth_form_container {
       gap: 50px;
+
       form {
         width: 100%;
+
         .positions_container {
           margin-right: auto;
+
           .position_item {
             display: flex;
             align-items: center;
             gap: 8px;
+            padding-left: 15px;
+
+            input[type="radio"] {
+              opacity: 0;
+              width: 0;
+              height: 0;
+
+              &:checked+span::before {
+                background-color: #2196F3;
+              }
+            }
+
+            span {
+              position: relative;
+
+              &::before {
+                content: '';
+                position: absolute;
+                left: -25px;
+                top: 4px;
+                width: 12px;
+                height: 12px;
+                border: 2px solid #ccc;
+                background-color: #fff;
+                border-radius: 50%;
+              }
+            }
+
+            input[type="radio"]:checked+span::before {
+              background-color: #2196F3;
+              padding: 1px;
+            }
           }
+
         }
+
         .upload_field {
           width: 100%;
+
           .upload_container {
             display: flex;
             align-items: stretch;
+
             .upload_btn {
               width: 100%;
               max-width: 84px;
+
               button {
                 background-color: transparent;
                 border-top-left-radius: 8px;
@@ -68,6 +113,7 @@
                 width: 100%;
               }
             }
+
             .disabled_input {
               padding: 18px 0;
               background-color: transparent;
@@ -81,18 +127,22 @@
             }
           }
         }
+
         .upload_field {
           .upload_container_error {
             color: var(--primary-red);
+
             .upload_btn {
               button {
                 border: 1px solid var(--primary-red);
               }
             }
+
             .disabled_input {
               border: 1px solid var(--primary-red);
             }
           }
+
           span {
             color: var(--primary-red);
             font-size: 12px;
@@ -101,10 +151,23 @@
           }
         }
       }
-      form > div {
+
+      form>div {
         margin: 0 auto;
         max-width: 380px;
         gap: 50px;
+      }
+
+      .form_error {
+        color: var(--primary-red);
+        text-align: center;
+        margin-top: -20px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .succesful_auth_container {
+        gap: 40px;
       }
     }
   }
@@ -113,6 +176,7 @@
 @media all and (max-width: 650px) {
   .user_section {
     padding: 40px 10px;
+
     .user_section_content {
       .users_list {
         margin-bottom: 50px;

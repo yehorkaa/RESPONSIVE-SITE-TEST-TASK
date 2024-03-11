@@ -8,9 +8,9 @@ const Header = () => {
     <header>
       <div className="container">
         <div className={styles.header_inner}>
-          <a className="logo" href="/">
+          <div className={styles.logo} onClick={() => window.location.reload()}>
             <Logo width={104} height={26} />
-          </a>
+          </div>
           <Box type="horiz" className={styles.buttons_group}>
             <Link className="btn-primary" href="#users">
               <span>Users</span>
