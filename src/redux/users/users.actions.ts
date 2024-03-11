@@ -10,7 +10,9 @@ export const getUsers = createAsyncThunk<IGetUsersRes>(
   "users/get",
   async (_, thunkAPI) => {
     const res = await UserService.getUsers();
-    if (!res.success) thunkAPI.rejectWithValue({});
+    if (!res.success) {
+      return thunkAPI.rejectWithValue({});
+    }
     return res;
   }
 );

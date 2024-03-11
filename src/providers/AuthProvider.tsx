@@ -8,7 +8,7 @@ interface IAuthProvider {
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
 
     useEffect(() => {
-        if (!AuthService.isLoggedIn()) AuthService.login();
+        AuthService.login();
     }, [])
 
   return <>{children}</>;

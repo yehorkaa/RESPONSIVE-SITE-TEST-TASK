@@ -34,10 +34,9 @@ const UserAuthForm = () => {
   const onSubmit: SubmitHandler<UserAuthFormFieldsType> = (
     data: UserAuthFormFieldsType
   ) => {
-    console.log(addUser(data));
+    addUser(data);
   };
-  console.log(error)
-  console.log(message)
+
   return (
     <Box type="vert" className={styles.user_auth_form_container} id="signup">
       {added_successfully ? <SuccessfulAuth message={'User successfully registered'} />
