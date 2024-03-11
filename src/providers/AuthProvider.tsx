@@ -6,10 +6,15 @@ interface IAuthProvider {
 }
 
 const AuthProvider: FC<IAuthProvider> = ({ children }) => {
-
-    useEffect(() => {
-        AuthService.login();
-    }, [])
+  useEffect(() => {
+    AuthService.login();
+    const intervalId = setInterval(() => {
+      AuthService.login();
+    }, 30 * 60 * 1000); // getting new token every 30 minuets
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return <>{children}</>;
 };
