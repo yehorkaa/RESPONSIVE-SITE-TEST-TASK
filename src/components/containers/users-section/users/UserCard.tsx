@@ -10,9 +10,9 @@ const UserCard: FC<IUser> = ({ photo, name, email, phone, position }) => {
     <div className={styles.user_card}>
       <Box type="vert" className="p-primary-black">
         <Avatar src={photo} alt={name} />
-        <p className={styles.name}>{getSlicedString(name, 21)}</p>
+        <p className={styles.name} data-tooltip={name}>{getSlicedString(name, 21)}</p>
         <p>{position}</p>
-        <p>{getSlicedString(email, 21)}</p>
+        <p data-tooltip={email}>{getSlicedString(email, 21)}</p>
         <p>{phone}</p>
       </Box>
     </div>
