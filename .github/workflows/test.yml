@@ -4,6 +4,7 @@
 #print_stuff имя джобы 
 #runs-on где она будет ранится
 #steps как выполнить эту джобу
+#uses чтоб заранить какой-то сторонний экшен
 name: This is my test workflow
 on: workflow_dispatch
 jobs:
@@ -12,4 +13,13 @@ jobs:
     steps:
       - name: Print message stuff
         run: echo I am printed stuff
+  setup:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get Repo Code
+        uses: actions/checkout@v3
+      - name: Install dependecies
+        run: npm ci
+      - name: Test Our App
+      - run: npm run test
 
