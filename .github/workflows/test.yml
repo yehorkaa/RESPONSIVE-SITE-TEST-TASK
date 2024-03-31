@@ -1,0 +1,16 @@
+
+#on это как addEventListener, и уже после него мы пишем тип ивента что мы слушаем, например push
+#jobs указывает джобы что будут выполняться одна за одной на данный лисенер
+#print_stuff имя джобы 
+#runs-on где она будет ранится
+#steps как выполнить эту джобу
+name: This is my test workflow
+on:
+  workflow_dispatch:
+jobs:
+  print_stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message stuff
+        run: echo I am printed stuff
+
