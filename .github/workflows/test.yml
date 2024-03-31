@@ -5,8 +5,7 @@
 #runs-on где она будет ранится
 #steps как выполнить эту джобу
 name: This is my test workflow
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 jobs:
   print_stuff:
     runs-on: ubuntu-latest
